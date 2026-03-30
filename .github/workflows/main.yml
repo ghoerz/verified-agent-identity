@@ -1,0 +1,18 @@
+name: Verify Human Identity
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify identity file
+        run: |
+          echo "Checking identity..."
+          cat identity.txt
+          echo "Verification complete"
